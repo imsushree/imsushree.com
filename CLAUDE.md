@@ -1,0 +1,1 @@
+Follow whatever is mentioned in ./AGENTS.md
