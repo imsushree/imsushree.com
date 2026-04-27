@@ -4,7 +4,7 @@
 
 ## Tech stack
 - We use React, TypeScript, tailwind, shadcn, react-router
-- Use components from shadcn (https://ui.shadcn.com/docs/components.md)
+- Use components from shadcn (https://ui.shadcn.com/docs/components)
 - Use @heroicons/react for icons
 
 ## Coding standards
