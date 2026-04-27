@@ -1,8 +1,8 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <>
@@ -13,15 +13,10 @@ function App() {
             Edit <code>src/App.tsx</code> and save to test <code>HMR</code>
           </p>
         </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
+        <Button onClick={() => setCount((count) => count + 1)}>Count is {count}</Button>
       </section>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

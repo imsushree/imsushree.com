@@ -1,73 +1,76 @@
-# React + TypeScript + Vite
+# imsushree.com
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the repository for **imsushree.com**, the frontend source code for my personal website. This project is built with modern web technologies, focusing on performance, aesthetics, and excellent developer experience.
 
-Currently, two official plugins are available:
+## 🛠️ Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Core:** [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- **Build Tool:** [Vite](https://vitejs.dev/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **UI Components:** [shadcn/ui](https://ui.shadcn.com/)
+- **Typography:** [JetBrains Mono Variable](https://fontsource.org/fonts/jetbrains-mono)
+- **Linting & Formatting:** [Oxlint](https://oxc.rs/docs/guide/usage/linter.html) & [Oxcfmt](https://oxc.rs/)
+- **Icons:** [Heroicons](https://heroicons.com/)
 
-## React Compiler
+## 🚀 Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-## Expanding the ESLint configuration
+### Installation
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/imsushree/imsushree.com.git
+   cd imsushree.com
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The application will be available at `http://localhost:5173`.
+
+## 📜 Available Scripts
+
+- `npm run dev`: Starts the local development server with Hot Module Replacement (HMR).
+- `npm run build`: Type-checks and builds the production-ready application.
+- `npm run lint`: Runs Oxlint to quickly analyze code for issues.
+- `npm run format`: Runs Oxfmt to format the codebase.
+- `npm run preview`: Serves the production build folder locally for testing.
+
+## 📐 Coding Standards
+
+To maintain consistency, we follow strict coding guidelines:
+- **Architecture:** Use small, single-responsibility functional components.
+- **Styling:** Rely entirely on Tailwind CSS utility classes; avoid inline styles.
+- **Shadcn Primitives:** Do not modify files in `src/components/ui`. Treat them as read-only base primitives.
+- **Iconography:** Use `@heroicons/react` across the app. Use **24x24 Outline** icons for general UI and **20x20 Solid** icons for dense UI areas (e.g., inside buttons).
+
+## 📁 Project Structure
+
+```text
+imsushree.com/
+├── public/              # Publicly accessible static assets
+├── src/                 # Source code
+│   ├── components/      # React components
+│   │   └── ui/          # shadcn/ui building blocks
+│   ├── lib/             # Helper functions (e.g., utils.ts for Tailwind merging)
+│   ├── App.tsx          # Root application component
+│   ├── index.css        # Global CSS, Tailwind v4 theme, and font imports
+│   └── main.tsx         # React DOM rendering entry point
+├── AGENTS.md            # Guidelines for AI coding assistants
+├── components.json      # shadcn/ui configuration
+├── .oxfmtrc.json        # Oxfmt code formatting rules
+├── package.json         # Dependencies and scripts
+└── vite.config.ts       # Vite configuration
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).
